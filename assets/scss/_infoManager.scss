@@ -1,0 +1,204 @@
+
+.row .no-padding-cols {
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.InfoManagerLeft {
+    background: #f1f2f4;
+    position: sticky;
+
+    .InfoManagerLeft-package_Container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        i {
+            font-size: 70px;
+            color: #aeafb0;
+            margin-top: 25px;
+        }
+
+        .InfoManagerLeft-info {
+            font-weight: 600;
+            padding: 10px 0 5px 0;
+            font-size: 21px;
+        }
+
+        .InfoManagerLeft-package {
+            margin-bottom: 10px;
+        }
+
+        .InfoManagerLeft-packageBtn {
+
+            &:hover {
+                opacity: 0.8;
+            }
+            
+            button {
+                border-radius: 22px;
+                padding: 5px 36px;
+                background-color: #0A75FF;
+                border: none;
+                color: #fff;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .InfoManagerLeft-nav {
+        .InfoManagerLeft-menu {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            .InfoManagerLeft-item {
+
+                .InfoManagerLeft-link {
+                    text-decoration: none;
+                    padding: 22px 40px;
+                    display: block;
+
+                    color: #000;
+
+                    i {
+                        padding-right: 18px;
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+                    
+                }
+                .InfoManagerLeft-link.active {
+                    background: rgba(24,142,232,0.21);
+                    color: #0d6efd;
+                    font-weight: 600;
+                }
+            }
+        }
+
+        .InfoManagerLeft-logout {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            i {
+                padding-right: 18px;
+            }
+
+            button {
+                padding: 22px 40px;
+            }
+        }
+    }
+}
+
+.InfoManagerRight {
+
+    .InfoManagerRight-infoContent {
+        padding: 25px 4%;
+
+        .InfoManagerRight-infoContent_btn-fix {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            a {
+                text-decoration: none;
+                font-weight: 600;
+            }
+        }
+
+        .InfoManagerRight-infoContent_item {
+            margin: 20px 0;
+            align-items: center;
+
+            dd button {
+                color: red;
+                background: none;
+                border: none;
+                font-weight: 600;
+            }
+        }
+
+        dt {
+            color: #333;
+            opacity: 0.55;
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        dd span {
+            opacity: 0.55;
+        }
+
+        dd input[type=password] {
+            border: none;
+            padding: 0;
+            width: 100%;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            outline: none;
+            background: none;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            font-size: 2rem;
+            -webkit-text-security: disc;
+        }
+
+        dd a {
+            text-decoration: none;
+            font-weight: 600;
+        }
+    }
+
+    .InfoManagerRight-social {
+
+        h4 {
+            margin-left: 2px;
+            padding: 25px 4%;
+            background: rgb(245, 245, 245);
+            display: flex;
+            justify-content: space-between;
+
+            a {
+                text-decoration: none;
+                font-weight: 600;
+                font-size: 16px;
+            }
+        }
+
+    }
+
+    .InfoManagerRight-security {
+        h4 {
+            margin-left: 2px;
+            padding: 25px 4%;
+            background: rgb(245, 245, 245);
+        }
+
+        .InfoManagerRight-security_item {
+            margin: 20px 0;
+            align-items: center;
+
+            dt {
+                color: #333;
+                opacity: 0.55;
+                font-weight: 500;
+                font-size: 16px;
+            }
+
+            a {
+                text-decoration: none;
+                font-weight: 600;
+                color: red;
+            }
+        }
+
+        
+    }
+}

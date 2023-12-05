@@ -1,12 +1,27 @@
-<div class="dropdown">
-  <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-    Dropdown
+@using Microsoft.AspNetCore.Authorization
+@inject IAuthorizationService IAuthorizationService
+
+
+@{
+  var result = await IAuthorizationService.AuthorizeAsync(this.User, "HideManage");
+}
+
+@if(result.Succeeded){
+  
+  <div class="dropdown">
+  <button class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Quản Lý
   </button>
   <ul class="dropdown-menu">
-    <li><button class="dropdown-item" type="button">Action</button></li>
-    <li><button class="dropdown-item" type="button">Another action</button></li>
-    <li class="nav-item">
-      <a class="nav-link" asp-area="Contact" asp-controller="Contact" asp-action="Index">Quản lý liên hệ</a>
+    <li>
+      <a class="dropdown-item" asp-area="Contact" asp-controller="Contact" asp-action="Index">Quản lý liên hệ</a>
+    </li>
+    <li>
+      <a class="dropdown-item" asp-area="Identity" asp-controller="Role" asp-action="Index">Quản lý vai trò</a>
+    </li>
+     <li>
+      <a class="dropdown-item" asp-area="Identity" asp-controller="User" asp-action="Index">Quản lý thành viên</a>
     </li>
   </ul>
 </div>
+}

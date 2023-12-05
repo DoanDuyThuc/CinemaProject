@@ -1,0 +1,72 @@
+@model EditExtraProfileModel
+@{
+    ViewData["Title"] = "Hồ sơ cá nhân";
+    Layout = "_InfoManagerLayout";
+}
+
+<partial name="_StatusMessage" />
+
+<div class="row">
+    <div class="InfoManagerRight-infoContent">
+    <h4 class="col-sm-10">Thông tin tài khoản</h4>
+    <form id="profile-form" method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="InfoManagerRight-infoContent_item row">
+            <dt class = "col-sm-5">
+                <label asp-for="UserName"></label>
+            </dt>   
+            <dd class = "col-sm-7">
+                <input asp-for="UserName" class="form-control" disabled />
+            </dd>
+        </div>
+        <div class="InfoManagerRight-infoContent_item row">
+            <dt class = "col-sm-5">
+                <label asp-for="UserEmail"></label>
+            </dt>   
+            <dd class = "col-sm-7">
+                <input asp-for="UserEmail" class="form-control" disabled />
+            </dd>
+        </div>
+        <div class="InfoManagerRight-infoContent_item row">
+            <dt class = "col-sm-5">
+                <label asp-for="PhoneNumber"></label>
+            </dt>   
+            <dd class = "col-sm-7">
+                <input asp-for="PhoneNumber" class="form-control" disabled />
+            </dd>
+        </div>
+        <div class="InfoManagerRight-infoContent_item row">
+            <dt class = "col-sm-5">
+                <label asp-for="HomeAdress"></label>
+            </dt>   
+            <dd class = "col-sm-7">
+                <input asp-for="HomeAdress" class="form-control" />
+            </dd>
+            <span asp-validation-for="HomeAdress" class="text-danger"></span>
+        </div>
+        <div class="InfoManagerRight-infoContent_item row">
+            <dt class = "col-sm-5">
+                <label asp-for="BirthDate"></label>
+            </dt>   
+            <dd class = "col-sm-7">
+                <input asp-for="BirthDate" class="form-control" />
+            </dd>
+            <span asp-validation-for="BirthDate" class="text-danger"></span>
+        </div>    
+        <div style="display: flex; justify-content: end;" class="InfoManagerRight-infoContent_item row">
+
+            <button style="margin-right: 11px;" id="update-profile-button" type="submit" class="btn btn-primary col-sm-3">Lưu dữ liệu</button>   
+        </div>
+    </form>
+    </div>
+</div>
+
+
+
+
+@* @section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+} *@
+
+
+

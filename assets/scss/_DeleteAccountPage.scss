@@ -1,0 +1,113 @@
+
+
+.DeleteAccount {
+
+    margin: 35px 0 35px 35px;
+    .DeleteAccount_header {
+    
+        a {
+            text-decoration: none;
+            color: #000;
+            padding: 10px 25px 10px 10px;
+            cursor: pointer;
+        }
+    }
+
+    .DeleteAccount_Body {
+        margin-top: 28px;
+        .DeleteAccount_Body-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            span {
+                font-weight: 600; 
+                color: red;
+                margin: 8px 0;
+            }
+        }
+
+        .DeleteAccount_Body-content {
+            padding: 0 0 14px 0;
+            border-bottom: 1px dashed #9CA1A3;
+            .DeleteAccount_Body-content-item {
+                display: flex;
+                margin-bottom: 20px;
+                .DeleteAccount_Body-content-number {
+                    width: 1.5rem;
+                    height: 1.5rem;
+                    min-width: 1.5rem;
+                    min-height: 1.5rem;
+                    color: #fff;
+                    background-color: #0A75FF;
+                    border-radius: 50%;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    margin-right: 1rem;
+                }
+                .DeleteAccount_Body-content-description .DeleteAccount_Body-content-description-note{
+                    
+                    margin-top: 20px;
+
+                    span {
+                        font-weight: bold;
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .DeleteAccount_Body-checkbox {
+            display: flex;
+            margin: 20px 0 50px 0;
+            align-items: center;
+
+            .DeleteAccount_Body-checkbox-btn {
+                margin-right: 20px;
+
+                input {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .DeleteAccount_Body-btnSubmit {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+            a {
+                width: 20%;
+                border-radius: 30px;
+                margin-right: 26px;
+            }
+
+            form {
+                width: 20%;
+
+                button {
+                    border-radius: 30px;
+                    width: 100%;
+
+                }
+            }
+        }
+
+        .DeleteAccount_Body-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+    }
+}

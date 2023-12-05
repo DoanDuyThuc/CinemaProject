@@ -1,0 +1,66 @@
+@using Microsoft.AspNetCore.Identity
+
+@inject UserManager<AppUser> UserManager
+
+@{
+    Layout= "_Layout";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="InfoManagerLeft col col-lg-4 no-padding-cols">
+            <div class="InfoManagerLeft-package_Container">
+                <i class="fa-solid fa-medal"></i>
+                <div class="InfoManagerLeft-info" >
+                    @UserManager.GetUserName(User)
+                </div>
+                <div class="InfoManagerLeft-package" >
+                    <span>Bạn chưa mua gói Amovie</span>
+                </div>
+                <a class="InfoManagerLeft-packageBtn">
+                    <button>Đăng ký gói</button>
+                </a>
+            </div>
+            <hr style="margin: 20px 0 0 0;">
+            <div class="InfoManagerLeft-nav" >
+                <ul class="InfoManagerLeft-menu">
+                    <li class="InfoManagerLeft-item">
+                        <a class="InfoManagerLeft-link" is-active-route asp-area="Identity"  asp-controller="Manage" asp-action="Index" title="Manage">
+                            <i class="fa-solid fa-user"></i>   
+                            Tài khoản
+                        </a>
+                    </li>
+                    <li class="InfoManagerLeft-item">
+                        <a class="InfoManagerLeft-link">
+                            <i class="fa-solid fa-user-gear"></i> 
+                            Kho phim của bạn
+                        </a>
+                    </li>
+                    <li class="InfoManagerLeft-item">
+                        <a class="InfoManagerLeft-link">
+                            <i class="fa-solid fa-ticket"></i>
+                            Ưu đãi của bạn
+                        </a>
+                    </li>
+                </ul>
+
+                <div class="InfoManagerLeft-logout">
+                    <form asp-area="Identity" asp-controller="Account" asp-action="LogOff" method="post" id="logoutForm" class="navbar-right">
+                        <button type="submit" class="dropdown-item">
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            Đăng xuất
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="InfoManagerRight col col-lg-8 no-padding-cols" >
+            @RenderBody()    
+        <div/>
+    </div>
+</div>
+
+
+@section Scripts {
+    @{ await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}

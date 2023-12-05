@@ -1,0 +1,91 @@
+@using Microsoft.AspNetCore.Identity
+@using CinemaProject.Models
+
+@inject UserManager<AppUser> UserManager
+
+@{
+    Layout = "_InfoManagerLayout";
+}
+
+<div class="DeleteAccount" >   
+    <div class="DeleteAccount_header">
+        <a asp-controller="Manage" asp-action="Index">
+            <i class="fa-solid fa-chevron-left"></i>
+        </a>
+        Xóa tài khoản
+    </div>
+
+    <div class="DeleteAccount_Body">
+        <div class="DeleteAccount_Body-title">
+            Bạn đang thực hiện xóa tài khoản
+            <span>@UserManager.GetUserName(User)</span>
+            Khi xóa tài khoản
+        </div>
+
+        <div class="DeleteAccount_Body-content">
+            <div class="DeleteAccount_Body-content-item">
+                <div class="DeleteAccount_Body-content-number" >
+                    1
+                </div>
+                <div class="DeleteAccount_Body-content-description">
+                    Bạn sẽ bị đăng xuất tài khoản trên tất cả thiết bị.
+                </div>
+            </div>
+             <div class="DeleteAccount_Body-content-item">
+                <div class="DeleteAccount_Body-content-number" >
+                    2
+                </div>
+                <div class="DeleteAccount_Body-content-description">
+                    Các gói dịch vụ và phim thuê của bạn sẽ bị hủy trước thời hạn.
+                </div>
+            </div>
+             <div class="DeleteAccount_Body-content-item">
+                <div class="DeleteAccount_Body-content-number" >
+                    3
+                </div>
+                <div class="DeleteAccount_Body-content-description">
+                    Chúng tôi sẽ thực hiện hủy tự động cho các gói thanh toán trực tiếp trên Amovie trên tất cả nền tảng.
+                    <div class="DeleteAccount_Body-content-description-note">
+                        <span>Lưu ý:</span> 
+                        Với các gói thanh toán trực tiếp trên App Store, Play Store hay từ các nhà mạng đối tác của Amovie, bạn cần thực hiện Hủy gia hạn trực tiếp theo hướng dẫn của bên cung cấp.
+                    </div>
+                </div>
+            </div>
+             <div class="DeleteAccount_Body-content-item">
+                <div class="DeleteAccount_Body-content-number" >
+                    4
+                </div>
+                <div class="DeleteAccount_Body-content-description">
+                    Mọi thông tin của bạn trên nền tảng Ứng dụng Amovie sẽ bị xóa Vĩnh Viễn.
+                </div>
+            </div>
+        </div>
+
+        <div class="DeleteAccount_Body-checkbox">
+            <div class="DeleteAccount_Body-checkbox-btn">
+                <input type="checkbox" id="DeleteAccountconfirmCheckbox">
+            </div>
+            Tôi xác nhận đã đọc và hiểu các vấn đề liên quan khi thực hiện xóa tài khoản là vĩnh viễn và không thể hoàn lại.
+        </div>
+
+        <div class="DeleteAccount_Body-btnSubmit">
+            <a asp-controller="Manage" asp-action="Index" type="button" class="btn btn-outline-primary">Hủy</a>
+            <form asp-controller="Manage" asp-action="DeleteUser" method="post" role="form">
+                <button disabled type="submit" class="btn btn-danger" id="DeleteAccountButton">Xóa tài khoản</button>
+            </form>
+        </div>
+
+        <div class="DeleteAccount_Body-description">
+            Nếu bạn có thắc mắc, vui lòng truy cập website:
+            <a asp-area="Contact" asp-controller="Contact" asp-action="SendContact">
+                Gửi góp ý để chúng tôi phát triển 
+            </a>
+        </div>
+        <div class="DeleteAccount_Body-description">
+            Hoặc liên hệ hotline:
+            <a href="tel:19000001">
+                1900 0001
+            </a>
+        </div>
+    </div>
+</div>

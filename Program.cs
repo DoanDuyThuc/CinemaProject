@@ -1,5 +1,9 @@
+using App.Data;
+using App.Models;
+using App.Services;
 using CinemaProject.ExtendMethods;
 using CinemaProject.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -14,6 +18,26 @@ var connectionString = builder.Configuration.GetConnectionString("AppCinemaConec
 builder.Services.AddDbContext<AppDbContext>(options => 
     options.UseMySQL(connectionString)
 );
+
+
+builder.Services.AddSingleton<IdentityErrorDescriber, AppIdentityErrorDescriber>();
+
+//quản lý quản trị user
+builder.Services.AddAuthorization(options => {
+    options.AddPolicy("HideManage", builder => {
+        builder.RequireAuthenticatedUser();
+        builder.RequireRole(RoleName.Administrator);
+    });
+});
+
+
+// đăng ký dịch vụ mail
+var mailSetting = builder.Configuration.GetSection("MailSettings");
+//đăng ký cấu hình của 1 lớp
+builder.Services.Configure<MailSettings>(mailSetting);
+// đăng ký dịch vụ SendMailService
+builder.Services.AddSingleton<IEmailSender, SendMailService>();
+
 
 
 //đăng ký dịch vụ Identity
@@ -55,8 +79,6 @@ builder.Services.ConfigureApplicationCookie(options => {
     options.AccessDeniedPath = "/KhongDuocTruyCap";
 });
 
-
-
 // cấu hình đăng nhập dịch vụ ngoài
 builder.Services.AddAuthentication()
                 .AddGoogle(options => {
@@ -74,7 +96,6 @@ builder.Services.AddAuthentication()
                     options.CallbackPath = "/dang-nhap-tu-facebook";
                 });
 
-
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -86,6 +107,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.AddStatusCodePage();// tùy biến lỗi 400 - 599 
