@@ -1,5 +1,4 @@
 using App.Data;
-using App.Models;
 using App.Services;
 using CinemaProject.ExtendMethods;
 using CinemaProject.Models;

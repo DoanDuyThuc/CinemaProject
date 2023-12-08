@@ -1,0 +1,78 @@
+$char-w: 1ch;
+$gap: .5*$char-w;
+
+// thêm sdt
+$a-char: 10;
+$in-w-a: $a-char*($char-w + $gap);
+.AddPhoneNumber-Container {
+    margin-top: 60px;
+    display: flex;
+    align-items: end;
+    .AddPhoneNumber-Container_Group {
+        margin-right: 32px;
+
+        label {
+            font-size: 25px;
+        }
+        input {
+            box-shadow: none;
+            display: block;
+            border: none;
+            padding: 0;
+            width: $in-w-a;
+            background: repeating-linear-gradient(90deg, 
+                dimgrey 0, dimgrey $char-w, 
+                transparent 0, transparent $char-w + $gap) 
+                0 100%/ #{$in-w-a - $gap} 2px no-repeat;
+            font: 5ch droid sans mono, consolas, monospace;
+            letter-spacing: $gap;
+            
+            &:focus {
+                outline: none;
+                color: dodgerblue;
+            }
+        }
+
+        button {
+            width: 120px;
+        }
+    }
+}
+
+// gửi mã code
+$s-char: 6;
+$in-w-s: $s-char*($char-w + $gap);
+.SendCode-Container {
+    margin-top: 60px;
+    display: flex;
+    align-items: end;
+    .AddPhoneNumber-Container_Group {
+        margin-right: 32px;
+
+        label {
+            font-size: 25px;
+        }
+        input {
+            box-shadow: none;
+            display: block;
+            border: none;
+            padding: 0;
+            width: $in-w-s;
+            background: repeating-linear-gradient(90deg, 
+                dimgrey 0, dimgrey $char-w, 
+                transparent 0, transparent $char-w + $gap) 
+                0 100%/ #{$in-w-s - $gap} 2px no-repeat;
+            font: 5ch droid sans mono, consolas, monospace;
+            letter-spacing: $gap;
+            
+            &:focus {
+                outline: none;
+                color: dodgerblue;
+            }
+        }
+
+        button {
+            width: 120px;
+        }
+    }
+}

@@ -1,4 +1,5 @@
 
+
 .row .no-padding-cols {
     padding-right: 0;
     padding-left: 0;
@@ -7,6 +8,8 @@
 .InfoManagerLeft {
     background: #f1f2f4;
     position: sticky;
+    border-right:1px solid rgba(212,212,212,0.69) ;
+    height: 825px;
 
     .InfoManagerLeft-package_Container {
         display: flex;
@@ -75,6 +78,43 @@
                     color: #0d6efd;
                     font-weight: 600;
                 }
+
+
+                //item phụ thuộc setting
+                .InfoManagerLeft-item-dependent {
+                    display: none;
+                }
+
+                .InfoManagerLeft-item-dependent.show {
+                    display: block;
+                }
+
+                .InfoManagerLeft-item-dependent {
+                    list-style: none;
+                    padding-left: 34px;
+
+                    .InfoManagerLeft-item-dependent-item {
+                        padding: 22px 40px;
+                        cursor: pointer;
+                        text-decoration: none;
+                        color: #000;
+                        display: block;
+
+                        i {
+                            margin-right: 18px;
+                        }
+
+                        &:hover {
+                            opacity: 0.8;
+                        }
+                    }
+
+                    .InfoManagerLeft-item-dependent-item.active {
+                        background: rgba(24,142,232,.21);
+                        color: #0d6efd;
+                        font-weight: 600;
+                    }
+                }
             }
         }
 
@@ -94,6 +134,7 @@
 }
 
 .InfoManagerRight {
+    // height: 750px;
 
     .InfoManagerRight-infoContent {
         padding: 25px 4%;
@@ -118,6 +159,11 @@
                 background: none;
                 border: none;
                 font-weight: 600;
+            }
+
+            input[disabled] {
+                color: #333;
+                opacity: 0.55;
             }
         }
 
@@ -200,5 +246,20 @@
         }
 
         
+    }
+}
+
+
+.FooterInfo {
+    display: flex;
+    justify-content: center;
+    padding: 26px;
+    border-top: 1px solid rgba(216, 216, 216, 0.85);
+
+    a {
+        text-decoration: none;
+        margin: 0 20px;
+        color: #333;
+        opacity: 0.55;
     }
 }

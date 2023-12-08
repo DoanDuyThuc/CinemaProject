@@ -3,7 +3,7 @@
 @inject UserManager<AppUser> UserManager
 
 @{
-    Layout= "_Layout";
+    Layout= "_LayoutExtra";
 }
 
 <div class="container">
@@ -31,6 +31,29 @@
                         </a>
                     </li>
                     <li class="InfoManagerLeft-item">
+                        <a class="InfoManagerLeft-link" id="HandleVerticalSettingProfile">
+                            <i class="fa-solid fa-screwdriver-wrench"></i>
+                            Cài đặt
+                            <i id="IconUpDown" style="padding-left: 12px;" class="fa-solid fa-caret-up"></i>
+                        </a>
+                        <ul class="InfoManagerLeft-item-dependent">
+                            <a is-active-route asp-area="Identity" asp-controller="Manage" asp-action="EditProfile" title="Manage"  class="InfoManagerLeft-item-dependent-item">
+                                <i class="fa-solid fa-thumbtack"></i>
+                                Thay đổi thông tin cá nhân
+                            </a>
+
+                            <a is-active-route asp-area="Identity" asp-controller="Manage" asp-action="ChangePassword" title="Manage"  class="InfoManagerLeft-item-dependent-item">
+                                <i class="fa-solid fa-thumbtack"></i>
+                                Thay đổi mật khẩu
+                            </a>
+
+                            <a is-active-route asp-area="Identity" asp-controller="Manage" asp-action="DeleteUser" title="Manage"  class="InfoManagerLeft-item-dependent-item">
+                                <i class="fa-solid fa-thumbtack"></i>
+                                Xóa tài khoản
+                            </a>
+                        </ul>
+                    </li>
+                    <li class="InfoManagerLeft-item">
                         <a class="InfoManagerLeft-link">
                             <i class="fa-solid fa-user-gear"></i> 
                             Kho phim của bạn
@@ -56,9 +79,13 @@
         </div>
         <div class="InfoManagerRight col col-lg-8 no-padding-cols" >
             @RenderBody()    
+            @await RenderSectionAsync("FooterInfo", required: false)
         <div/>
     </div>
 </div>
+
+@* <script src="~/js/infoManage.js"></script> *@
+<script src="~/js/infoManage.js" asp-append-version="true"></script>
 
 
 @section Scripts {

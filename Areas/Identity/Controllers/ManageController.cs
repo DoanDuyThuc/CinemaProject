@@ -52,7 +52,6 @@ namespace App.Areas.Identity.Controllers
                 : message == ManageMessageId.RemovePhoneSuccess ? "Đã bỏ số điện thoại."
                 : "";
 
-            ViewBag.ModelChangePassword = new ChangePasswordViewModel();
             var user = await GetCurrentUserAsync();
             var model = new IndexViewModel
             {

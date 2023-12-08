@@ -2,11 +2,124 @@
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family: 'Roboto' , sans-serif;
+}
+
+.Body_Layoutmain {
+  background: #fff;
 }
 
 html {
     font-size: 14px;
+  }
+
+  .header_main {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    background: linear-gradient(rgb(16, 16, 16), rgba(16, 16, 16, 0));
+    transition: background-color 0.3s ease, padding 0.3s ease;
+
+  }
+
+  .header_main-extral {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 0;
+    background: #000;
+    transition: background-color 0.3s ease, padding 0.3s ease;
+  }
+
+// css search
+  header {
+    .container_left {
+      display: flex;
+      align-items: center;
+    }
+
+    .container_right {
+      display: flex;
+      align-items: center;
+
+      .Search_Control.NoActive {
+        border: 1px solid transparent;
+        position: relative;
+        padding: 10px 11px;
+        transition: all 0.3s ease-in-out 0.2s;
+        right: 0px;
+        margin-right: 2.25rem;
+
+        .Search_Control-input {
+          background: transparent;
+          transition: all 0.4s ease-in-out 0s;
+          width: 0px;
+          color: rgb(255, 255, 255);
+          font-weight: 400;
+          font-size: 1rem;
+          border: 0px;
+          padding: 0px;
+          pointer-events: none;
+        }
+
+        .Search_Control-icon {
+          transition: all 0.3s ease-in-out 0s;
+          position: absolute;
+          cursor: pointer;
+          left: 12px;
+          top: 50%;
+          transform: translate(0px, -50%);
+          i {
+            color: #fff;
+          }
+        }
+      }
+
+      .Search_Control.Active {
+        position: relative;
+        right: 0px;
+        margin-right: 2.25rem;
+        background-color: rgba(0, 0, 0, 0.5);
+        border-radius: 4px;
+        transition: all 0.4s ease-in-out 0s;
+        border: 1px solid rgb(255, 255, 255);
+        padding: 10px 44px;
+        
+        .Search_Control-input {
+          width: 200px;
+          pointer-events: initial;
+          background: transparent;
+          transition: all 0.4s ease-in-out 0s;
+          color: rgb(255, 255, 255);
+          font-weight: 400;
+          font-size: 1rem;
+          border: 0px;
+          padding: 0px;
+          outline: none;
+        }
+
+        .Search_Control-icon {
+          transition: all 0.3s ease-in-out 0s;
+          position: absolute;
+          cursor: pointer;
+          left: 12px;
+          top: 50%;
+          transform: translate(0px, -50%);
+          i {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .header_main.scrolled {
+    background: #000 !important; /* Background color with some transparency */
+  }
+
+  .container_main {
+    padding-top: 60px;
   }
   
   @media (min-width: 768px) {
@@ -27,4 +140,6 @@ html {
 @import "header";
 @import "loginaregister";
 @import "infoManager";
-@import "DeleteAccountPage";
+@import "deleteAccountPage";
+@import "ChangePassword";
+@import "AddPhoneNumber";
